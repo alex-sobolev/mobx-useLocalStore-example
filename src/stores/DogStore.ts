@@ -13,17 +13,14 @@ export const DogStore = (): IDogStore => ({
   error: null,
   async fetchDog() {
     try {
-      console.log('fetching dog...');
       this.fetching = true;
 
       const response = await fetch(dogPath);
       const data = await response.json();
-      console.log('Dog fetch success:', data);
 
       this.fetching = false;
       this.error = null;
       this.dogSrc = data.message;
-      console.log('this', JSON.stringify(this));
     } catch (err) {
       this.error = err;
       this.dogSrc = '';

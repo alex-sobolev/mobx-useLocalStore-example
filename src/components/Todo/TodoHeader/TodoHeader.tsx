@@ -4,6 +4,6 @@ import { useRootStore } from '../../../stores';
 
 export const TodoHeader = () => {
   const { todoStore } = useRootStore();
-  console.log('header');
+
   return useObserver(() => <header className="App-header">{todoStore.todosCount} Todos:</header>);
 };
